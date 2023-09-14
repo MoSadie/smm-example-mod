@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "ssm-lib-example",
+  "version": "${version}",
+  "name": "SMM-Lib Example Mod",
+  "description": "Customizes the Main Menu!",
+  "authors": [
+    "MoSadie"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/smm-lib",
+    "sources": "https://github.com/MoSadie/ServerMainMenu-Lib",
+    "issues": "https://github.com/MoSadie/ServerMainMenu-Lib/issues"
+  },
+  "license": "LGPL-3.0",
+  "icon": "assets/smm-lib-example/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.example.smmlibexample.client.SMMLibExampleClient"
+    ],
+    "fabric-datagen": [
+      "com.example.smmlibexample.client.data.SMMLibExampleDataGen"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric-api": ">=0.62.0",
+    "minecraft": "~1.20.1",
+    "modmenu": ">=7.0.1",
+    "cloth-config": ">=11.0.99",
+    "smm-lib": ">=1.0.0"
+  }
+}
