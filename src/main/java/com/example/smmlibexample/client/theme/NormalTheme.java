@@ -16,7 +16,7 @@ public class NormalTheme implements MenuTheme {
 
     @Override
     public Identifier getPanorama() {
-        return new Identifier(SMMLibExampleClient.MOD_ID, "textures/gui/title/background/normal/panorama");
+        return Identifier.of(SMMLibExampleClient.MOD_ID, "textures/gui/title/background/normal/panorama");
     }
 
     // As an easy-to-modify example, the following demonstrates how to use a static array of splash text
@@ -51,7 +51,8 @@ public class NormalTheme implements MenuTheme {
         String name = "Your Server Name"; // Server name is usually used in mods for data storage.
         String address = "localhost"; // Server IP, just like when using direct connect.
 
-        Util.joinServer(name, address);
+        //Util.joinServer(name, address);
+        Util.loadWorld("Dev");
     }
 
     @Override

@@ -22,7 +22,7 @@ public class SMMLibExampleClient implements ClientModInitializer {
 
         LOGGER.info("Registering Theme...");
 
-        Registry.register(ServerMainMenuLibClient.registry, new Identifier(SMMLibExampleClient.MOD_ID, "normal"), normalTheme);
+        Registry.register(ServerMainMenuLibClient.registry, Identifier.of(SMMLibExampleClient.MOD_ID, "normal"), normalTheme);
 
         LOGGER.info("SMM-Lib example mod initialized!");
     }
