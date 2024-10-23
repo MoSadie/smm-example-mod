@@ -9,8 +9,8 @@
   ],
   "contact": {
     "homepage": "https://modrinth.com/mod/smm-lib",
-    "sources": "https://github.com/MoSadie/ServerMainMenu-Lib",
-    "issues": "https://github.com/MoSadie/ServerMainMenu-Lib/issues"
+    "sources": "https://github.com/MoSadie/smm-example-mod",
+    "issues": "https://github.com/MoSadie/smm-example-mod/issues"
   },
   "license": "LGPL-3.0",
   "icon": "assets/smm-lib-example/icon.png",
@@ -24,11 +24,9 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=0.14.9",
-    "fabric-api": ">=0.62.0",
-    "minecraft": "~1.20.1",
-    "modmenu": ">=7.0.1",
-    "cloth-config": ">=11.0.99",
-    "smm-lib": ">=1.0.0"
+    "fabricloader": ">=0.15.10",
+    "fabric-api": ">=0.91.1",
+    "minecraft": "~1.21",
+    "smm-lib": ">=2.0.0"
   }
 }
