@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.6-SNAPSHOT'
+    id 'fabric-loom' version '1.10-SNAPSHOT'
 }
 
 version = project.mod_version
@@ -56,6 +56,8 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+
+    mavenLocal()
 }
 
 dependencies {
@@ -66,7 +68,8 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modApi("maven.modrinth:smm-lib:${project.ssm_lib_version}")
+    //modApi("maven.modrinth:smm-lib:${project.smm_lib_version}")
+    modApi("com.mosadie:ServerMainMenu-Lib:${project.smm_lib_version}")
 }
 
 processResources {
