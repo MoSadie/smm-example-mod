@@ -1,6 +1,6 @@
 package com.example.smmlibexample.client;
 
-import com.example.smmlibexample.client.theme.NormalTheme;
+import com.example.smmlibexample.client.theme.ExampleTheme;
 import com.mosadie.servermainmenu.client.ServerMainMenuLibClient;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.registry.Registry;
@@ -14,7 +14,7 @@ public class SMMLibExampleClient implements ClientModInitializer {
     public static final String MOD_ID = "smm-lib-example";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    private static NormalTheme normalTheme = new NormalTheme();
+    private static ExampleTheme normalTheme = new ExampleTheme();
 
     @Override
     public void onInitializeClient() {
