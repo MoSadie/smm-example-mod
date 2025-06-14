@@ -3,20 +3,19 @@ package com.example.smmlibexample.client.theme;
 import com.example.smmlibexample.client.SMMLibExampleClient;
 import com.mosadie.servermainmenu.api.MenuTheme;
 import com.mosadie.servermainmenu.api.Util;
-import net.minecraft.client.network.ServerInfo;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.Random;
 
-public class NormalTheme implements MenuTheme {
+public class ExampleTheme implements MenuTheme {
     @Override
     public String getId() {
-        return "normal";
+        return "example";
     }
 
     @Override
     public Identifier getPanorama() {
-        return Identifier.of(SMMLibExampleClient.MOD_ID, "textures/gui/title/background/normal/panorama");
+        return Identifier.of(SMMLibExampleClient.MOD_ID, "textures/gui/title/background/example/panorama");
     }
 
     // As an easy-to-modify example, the following demonstrates how to use a static array of splash text
