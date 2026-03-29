@@ -1,11 +1,12 @@
 package com.example.smmlibexample.client.theme;
 
 import com.example.smmlibexample.client.SMMLibExampleClient;
-import com.mosadie.servermainmenu.api.MenuTheme;
-import com.mosadie.servermainmenu.api.Util;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.random.Random;
+import com.mosadie.simplemainmenu.api.MenuTheme;
+import com.mosadie.simplemainmenu.api.SplashText;
+import com.mosadie.simplemainmenu.api.Util;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.util.RandomSource;
 
 public class ExampleTheme implements MenuTheme {
     @Override
@@ -15,7 +16,7 @@ public class ExampleTheme implements MenuTheme {
 
     @Override
     public Identifier getPanorama() {
-        return Identifier.of(SMMLibExampleClient.MOD_ID, "textures/gui/title/background/example/panorama");
+        return Identifier.fromNamespaceAndPath(SMMLibExampleClient.MOD_ID, "textures/gui/title/background/example/panorama");
     }
 
     // As an easy-to-modify example, the following demonstrates how to use a static array of splash text
@@ -28,17 +29,23 @@ public class ExampleTheme implements MenuTheme {
     };
 
     @Override
-    public String getSplashText() {
+    public SplashText getSplashText() {
         // Return a random line from the splashOptions array described above.
         // This is just one way to determine the splash text, be creative!
-        return splashOptions[Random.create().nextBetweenExclusive(0, splashOptions.length)];
+        SplashText.Builder builder = SplashText.builder();
+
+        String randomOption = splashOptions[RandomSource.create().nextInt(0, splashOptions.length)];
+
+        builder.addLine(randomOption);
+
+        return builder.build();
     }
 
     @Override
-    public Text getQuickJoinButtonText() {
-        // For hard-coded text, use Text.literal("whatever you want") instead
+    public Component getQuickJoinButtonComponent() {
+        // For hard-coded text, use Component.literal("whatever you want") instead
         // For demonstration purposes, here we use a translation key, for translation support.
-        return Text.translatable("smm-lib-example.menu.join");
+        return Component.translatable("smm-lib-example.menu.join");
     }
 
     @Override
@@ -50,8 +57,7 @@ public class ExampleTheme implements MenuTheme {
         String name = "Your Server Name"; // Server name is usually used in mods for data storage.
         String address = "localhost"; // Server IP, just like when using direct connect.
 
-        //Util.joinServer(name, address);
-        Util.loadWorld("Dev");
+        Util.joinServer(name, address);
     }
 
     @Override

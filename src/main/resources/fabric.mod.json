@@ -24,9 +24,9 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=0.15.10",
-    "fabric-api": ">=0.91.1",
-    "minecraft": "~1.21",
-    "smm-lib": ">=2.0.0"
+    "fabricloader": ">=0.18.5",
+    "fabric-api": ">=0.144.3",
+    "minecraft": "~26.1",
+    "smm-lib": ">=3.0.0"
   }
 }
