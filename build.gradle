@@ -1,13 +1,9 @@
 plugins {
-    id 'fabric-loom' version '1.10-SNAPSHOT'
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
 }
 
 version = project.mod_version
 group = project.maven_group
-
-base {
-    archivesName = project.archivesBaseName
-}
 
 loom {
     runs {
@@ -61,12 +57,11 @@ repositories {
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-    modApi("maven.modrinth:smm-lib:${project.smm_lib_version}")
+    api("maven.modrinth:smm-lib:${project.smm_lib_version}")
 }
 
 processResources {
@@ -78,7 +73,7 @@ processResources {
     }
 }
 
-def targetJavaVersion = JavaVersion.VERSION_17
+def targetJavaVersion = JavaVersion.VERSION_25
 
 
 java {
@@ -95,6 +90,6 @@ java {
 
 jar {
     from("LICENSE") {
-        rename { "${it}_${project.archivesBaseName}" }
+        rename { "${it}_${project.archives_base_name}" }
     }
 }

@@ -1,10 +1,10 @@
 package com.example.smmlibexample.client;
 
 import com.example.smmlibexample.client.theme.ExampleTheme;
-import com.mosadie.servermainmenu.client.ServerMainMenuLibClient;
+import com.mosadie.simplemainmenu.client.SimpleMainMenuLibClient;
 import net.fabricmc.api.ClientModInitializer;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +22,7 @@ public class SMMLibExampleClient implements ClientModInitializer {
 
         LOGGER.info("Registering Theme...");
 
-        Registry.register(ServerMainMenuLibClient.registry, Identifier.of(SMMLibExampleClient.MOD_ID, "normal"), normalTheme);
+        Registry.register(SimpleMainMenuLibClient.registry, Identifier.fromNamespaceAndPath(SMMLibExampleClient.MOD_ID, "normal"), normalTheme);
 
         LOGGER.info("SMM-Lib example mod initialized!");
     }
